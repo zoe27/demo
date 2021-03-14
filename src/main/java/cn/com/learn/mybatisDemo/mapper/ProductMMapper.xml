@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.learn.mybatisDemo.mapper.ProductMMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.learn.mybatisDemo.vo.ProductM" >
+    <id column="pid" property="pid" jdbcType="INTEGER" />
+    <result column="pname" property="pname" jdbcType="VARCHAR" />
+    <result column="pprice" property="pprice" jdbcType="DOUBLE" />
+    <result column="premain" property="premain" jdbcType="INTEGER" />
+    <result column="mid" property="mid" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from product_m
+    where pid = #{pid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.learn.mybatisDemo.vo.ProductM" >
+    insert into product_m (pid, pname, pprice, 
+      premain, mid)
+    values (#{pid,jdbcType=INTEGER}, #{pname,jdbcType=VARCHAR}, #{pprice,jdbcType=DOUBLE}, 
+      #{premain,jdbcType=INTEGER}, #{mid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.com.learn.mybatisDemo.vo.ProductM" >
+    update product_m
+    set pname = #{pname,jdbcType=VARCHAR},
+      pprice = #{pprice,jdbcType=DOUBLE},
+      premain = #{premain,jdbcType=INTEGER},
+      mid = #{mid,jdbcType=INTEGER}
+    where pid = #{pid,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select pid, pname, pprice, premain, mid
+    from product_m
+    where pid = #{pid,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select pid, pname, pprice, premain, mid
+    from product_m
+  </select>
+</mapper>

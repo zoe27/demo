@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.learn.mybatisDemo.mapper.UserInfoMapper">
+  <select id="getUser" resultType="cn.com.learn.mybatisDemo.vo.UserInfo" parameterType="int">
+    select * from USER_INFO where id = #{id}
+  </select>
+  <insert id="add" parameterType="cn.com.learn.mybatisDemo.vo.UserInfo">
+    insert into USER_INFO(user_name, pass) values(#{name}, #{pass})
+  </insert>
+
+</mapper>

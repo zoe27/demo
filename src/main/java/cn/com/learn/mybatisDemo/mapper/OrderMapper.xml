@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.learn.mybatisDemo.mapper.OrderMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.learn.mybatisDemo.vo.Order" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="addr" property="addr" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="order_time" property="orderTime" jdbcType="TIMESTAMP" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="total" property="total" jdbcType="DOUBLE" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.learn.mybatisDemo.vo.Order" >
+    insert into order (id, addr, name, 
+      order_time, phone, state, 
+      total, user_id)
+    values (#{id,jdbcType=INTEGER}, #{addr,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{orderTime,jdbcType=TIMESTAMP}, #{phone,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, 
+      #{total,jdbcType=DOUBLE}, #{userId,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.com.learn.mybatisDemo.vo.Order" >
+    update order
+    set addr = #{addr,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      order_time = #{orderTime,jdbcType=TIMESTAMP},
+      phone = #{phone,jdbcType=VARCHAR},
+      state = #{state,jdbcType=INTEGER},
+      total = #{total,jdbcType=DOUBLE},
+      user_id = #{userId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, addr, name, order_time, phone, state, total, user_id
+    from order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, addr, name, order_time, phone, state, total, user_id
+    from order
+  </select>
+</mapper>

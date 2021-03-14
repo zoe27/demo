@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.learn.mybatisDemo.mapper.OrderItemMapper" >
+  <resultMap id="BaseResultMap" type="cn.com.learn.mybatisDemo.vo.OrderItem" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="count" property="count" jdbcType="INTEGER" />
+    <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="product_id" property="productId" jdbcType="INTEGER" />
+    <result column="sub_total" property="subTotal" jdbcType="DOUBLE" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from order_item
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.learn.mybatisDemo.vo.OrderItem" >
+    insert into order_item (id, count, order_id, 
+      product_id, sub_total)
+    values (#{id,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, 
+      #{productId,jdbcType=INTEGER}, #{subTotal,jdbcType=DOUBLE})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.com.learn.mybatisDemo.vo.OrderItem" >
+    update order_item
+    set count = #{count,jdbcType=INTEGER},
+      order_id = #{orderId,jdbcType=INTEGER},
+      product_id = #{productId,jdbcType=INTEGER},
+      sub_total = #{subTotal,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, count, order_id, product_id, sub_total
+    from order_item
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, count, order_id, product_id, sub_total
+    from order_item
+  </select>
+</mapper>
