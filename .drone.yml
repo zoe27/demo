@@ -2,6 +2,6 @@
     type:
     steps:
       -
-  kind: pipeline
+  pipeline:
     test:
       echo "hello world"
