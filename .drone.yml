@@ -1,0 +1,7 @@
+  name:
+    type:
+    steps:
+      -
+  kind: pipeline
+    test:
+      echo "hello world"
