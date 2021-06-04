@@ -1,13 +1,13 @@
-  name:
-    type:
-    steps:
-      -
-  pipeline:
-    test:
-      echo "hello world"
+---
+name: drone
+kind: pipeline
 
-  trigger:
-    branch:
-      - master
-    event:
-      - push
+steps:
+  - name: build
+    echo "hello world"
+
+trigger:
+  branch:
+    - master
+  event:
+    - push
