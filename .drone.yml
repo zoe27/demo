@@ -1,9 +1,11 @@
 ---
 name: drone
 kind: pipeline
+type: docker
 
 steps:
   - name: build
+    image: redis:6.2.1
     commands:
     - echo "hello world"
 
