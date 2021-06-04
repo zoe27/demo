@@ -4,7 +4,8 @@ kind: pipeline
 
 steps:
   - name: build
-    echo "hello world"
+    commands:
+    - echo "hello world"
 
 trigger:
   branch:
