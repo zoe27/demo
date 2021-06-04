@@ -8,6 +8,12 @@ steps:
     image: redis:6.2.1
     commands:
     - echo "hello world"
+    - echo "this is the first time to test drone"
+
+  - name: test
+    commands:
+      - echo "hello world"
+      - echo "this is the first time to test drone"
 
 trigger:
   branch:
