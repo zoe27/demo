@@ -5,3 +5,9 @@
   pipeline:
     test:
       echo "hello world"
+
+  trigger:
+    branch:
+      - master
+    event:
+      - push
