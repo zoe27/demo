@@ -16,6 +16,11 @@ steps:
       - echo "hello world"
       - echo "this is the first time to test drone"
 
+  - name: deploy
+    image: redis:6.2.1
+    commands:
+      - echo "start to deploy service"
+
 trigger:
   branch:
     - master
