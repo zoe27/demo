@@ -20,6 +20,7 @@ steps:
     - ls target
     - ls /home/docker/maven/m2
     volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
       - /home/repository:/root/.m2
 
   - name: deploy
