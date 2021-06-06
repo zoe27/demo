@@ -18,6 +18,7 @@ steps:
     - pwd
     - ls
     - ls target
+    - ls /home/docker/maven/m2
     volumes:
       - name: mavenrep
         path: /home/repository
