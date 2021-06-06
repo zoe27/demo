@@ -14,7 +14,8 @@ steps:
     image: maven:3-jdk-8
     volumes:
       - name: targetJar
-        path: /home/repository
+        host:
+          path: /home/repository
     commands:
       - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
       - mvn test -B
