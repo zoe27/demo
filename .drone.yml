@@ -6,7 +6,7 @@ type: docker
 volumes:
   - name: targetJar
     host:
-      path: /home/repository/l
+      path: /root/.m2/repository
 
 steps:
   - name: build
@@ -19,10 +19,9 @@ steps:
     image: maven:3-jdk-8
     volumes:
       - name: targetJar
-        path: /home/repository
+        path: /root/.m2/repository
     commands:
       - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-      - mvn test -B
       - pwd
       - ls
       - ls target
