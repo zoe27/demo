@@ -11,10 +11,10 @@ steps:
     - echo "this is the first time to test drone"
 
   - name: test
-    image: redis:6.2.1
+    image: maven:3-jdk-10
     commands:
-      - echo "hello world"
-      - echo "this is the first time to test drone"
+    - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+    - mvn test -B
 
   - name: deploy
     image: redis:6.2.1
