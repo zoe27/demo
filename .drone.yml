@@ -20,8 +20,7 @@ steps:
     - ls target
     - ls /home/docker/maven/m2
     volumes:
-      - name: mavenrep
-        path: /home/repository
+      - /home/repository:/root/.m2
 
   - name: deploy
     image: redis:6.2.1
