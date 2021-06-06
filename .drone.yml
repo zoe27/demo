@@ -11,7 +11,7 @@ steps:
     - echo "this is the first time to test drone"
 
   - name: test
-    image: maven:3-jdk-10
+    image: maven:3-jdk-8
     commands:
     - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
     - mvn test -B
