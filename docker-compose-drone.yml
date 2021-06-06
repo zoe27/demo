@@ -18,6 +18,8 @@ services:
       - DRONE_SERVER_HOST=204.44.87.9                    #
       - DRONE_SERVER_PROTO=http                  #
       - DRONE_LOGS_TRACE=true
+      - DRONE_USER_CREATE=username:{USER_NAME},admin:true # set USER_NAME as administrator, we can set truested then
+
 
   drone-agent:
     image: drone/agent:1.6
