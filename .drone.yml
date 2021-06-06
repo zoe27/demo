@@ -15,6 +15,9 @@ steps:
     commands:
     - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
     - mvn test -B
+    volumes:
+      - name: mavenrep
+        path: /home/repository
 
   - name: deploy
     image: redis:6.2.1
