@@ -18,8 +18,11 @@ steps:
     - pwd
     - ls
     - ls target
+    - cp -rf target/* targetJar
     volumes:
-      - "/home/repository:/root/.m2"
+      - name: targetJar
+        path: /home/repository
+
 
   - name: deploy
     image: redis:6.2.1
