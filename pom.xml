@@ -133,7 +133,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <fork>true</fork>
-                    <mainClass>yiwang.salary.tools.App</mainClass>
+                    <mainClass>yiwang.salary.yiwang.salary.tools.App</mainClass>
                 </configuration>
                 <executions>
                     <execution>
