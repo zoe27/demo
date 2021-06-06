@@ -3,6 +3,11 @@ name: drone
 kind: pipeline
 type: docker
 
+volumes:
+  - name: targetJar
+    host:
+      path: /home/repository
+
 steps:
   - name: build
     image: redis:6.2.1
@@ -14,8 +19,7 @@ steps:
     image: maven:3-jdk-8
     volumes:
       - name: targetJar
-        host:
-          path: /home/repository
+        path: /home/repository
     commands:
       - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
       - mvn test -B
