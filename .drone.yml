@@ -17,6 +17,7 @@ steps:
     - mvn test -B
     - pwd
     - ls
+    - ls target
     volumes:
       - name: mavenrep
         path: /home/repository
