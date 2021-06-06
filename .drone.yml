@@ -19,8 +19,7 @@ steps:
     - ls
     - ls target
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /home/repository:/root/.m2
+      - "/home/repository:/root/.m2"
 
   - name: deploy
     image: redis:6.2.1
