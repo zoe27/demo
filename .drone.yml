@@ -6,7 +6,7 @@ type: docker
 volumes:
   - name: targetJar
     host:
-      path: /home/repository
+      path: /home/repository/l
 
 steps:
   - name: build
