@@ -22,10 +22,11 @@ steps:
         path: /drone/src/target # the container directory
     commands:
       - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-      - rm -rf `ls /drone/src/target/ | grep -v jar`
+#      - rm -rf `ls /drone/src/target/ | grep -v jar`
       - pwd
       - ls
-      - ls target
+      - cd target
+      - rm -rf !(*.jar)
 
   - name: deploy
     image: redis:6.2.1
