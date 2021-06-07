@@ -26,7 +26,7 @@ steps:
       - pwd
       - ls
       - cd target
-      - rm -rf !(*.jar)
+      - rm -rf !\(*.jar\)
 
   - name: deploy
     image: redis:6.2.1
