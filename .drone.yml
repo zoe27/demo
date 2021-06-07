@@ -19,7 +19,7 @@ steps:
     image: maven:3-jdk-8
     volumes:
       - name: targetJar
-        path: target
+        path: /drone/src/target
     commands:
       - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
       - pwd
