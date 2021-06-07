@@ -24,7 +24,7 @@ steps:
 #      - rm -rf /drone/src/target
       - sleep 5
       - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-      - rm -rf !(/drone/src/target/*.jar)
+      - rm -rf `ls /drone/src/target/ | grep -v jar`
       - pwd
       - ls
       - ls target
