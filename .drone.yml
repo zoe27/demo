@@ -6,7 +6,7 @@ type: docker
 volumes:
   - name: targetJar
     host:
-      path: /home/repository
+      path: /home/repository  # the machine directory
 
 steps:
   - name: build
@@ -19,14 +19,12 @@ steps:
     image: maven:3-jdk-8
     volumes:
       - name: targetJar
-        path: /drone/src/target
+        path: /drone/src/target # the container directory
     commands:
       - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
       - pwd
       - ls
       - ls target
-      - ls targetJar
-      - cp -rf target/* targetJar
 
   - name: deploy
     image: redis:6.2.1
