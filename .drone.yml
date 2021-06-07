@@ -21,8 +21,9 @@ steps:
       - name: targetJar
         path: /drone/src/target # the container directory
     commands:
-      - rm -rf !(/drone/src/target/*.jar)
+      - rm -rf /drone/src/target
       - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+      - rm -rf !(/drone/src/target/*.jar)
       - pwd
       - ls
       - ls target
