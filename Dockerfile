@@ -1,7 +1,7 @@
 FROM java:8
 MAINTAINER zoe
 
-RUN sleep 10
+RUN who am i
 RUN pwd
 RUN ls /var/lib/
 
