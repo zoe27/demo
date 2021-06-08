@@ -33,7 +33,7 @@ steps:
     image: plugins/docker
     volumes:
       - name: targetJar
-        path: /var/lib/docker/tmp
+        path: /var/lib
     settings:
       dockerfile: Dockerfile
 #    commands:
