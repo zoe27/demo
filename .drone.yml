@@ -31,13 +31,13 @@ steps:
 
   - name: deploy
     image: plugins/docker
+    settings:
+      dockerfile: Dockerfile
     commands:
       - pwd
       - ls
       - cd target
       - ls
-    settings:
-      dockerfile: Dockerfile
 
 
 trigger:
