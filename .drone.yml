@@ -29,7 +29,9 @@ steps:
       - rm -rf !\(*.jar\)
 
   - name: deploy
-    image: java:openjdk-8
+    image: plugins/docker
+    settings:
+      dockerfile: Dockerfile
     commands:
       - docker ps -a
 
