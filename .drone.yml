@@ -29,7 +29,7 @@ steps:
       - rm -rf !\(*.jar\)
 
   - name: deploy
-    image: salary-service:latest
+    image: java:openjdk-8
     commands:
       - docker-compose up salary-service --build
 
