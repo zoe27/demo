@@ -33,6 +33,7 @@ steps:
     commands:
       - pwd
       - ls
+      - ls target
     settings:
       dockerfile: Dockerfile
 
