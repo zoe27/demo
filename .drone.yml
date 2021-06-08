@@ -36,11 +36,7 @@ steps:
         path: /var/lib
     settings:
       dockerfile: Dockerfile
-#    commands:
-#      - pwd
-#      - ls
-#      - cd target
-#      - ls
+
 
 
 trigger:
