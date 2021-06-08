@@ -31,7 +31,7 @@ steps:
   - name: deploy
     image: java:openjdk-8
     commands:
-      - docker-compose up salary-service --build
+      - docker ps -a
 
 trigger:
   branch:
