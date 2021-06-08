@@ -33,11 +33,11 @@ steps:
     image: plugins/docker
     settings:
       dockerfile: Dockerfile
-    commands:
-      - pwd
-      - ls
-      - cd target
-      - ls
+#    commands:
+#      - pwd
+#      - ls
+#      - cd target
+#      - ls
 
 
 trigger:
