@@ -29,9 +29,9 @@ steps:
       - rm -rf !\(*.jar\)
 
   - name: deploy
-    image: redis:6.2.1
+    image: salary-service:latest
     commands:
-      - echo "start to deploy service"
+      - docker-compose up salary-service --build
 
 trigger:
   branch:

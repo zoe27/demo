@@ -1,5 +1,5 @@
 FROM java:8
-MAINTAINER royizhou
-ADD site-page-0.0.1-SNAPSHOT.jar site.jar
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","site.jar"]
+MAINTAINER zoe
+ADD salary-service.jar salary-service.jar
+EXPOSE 8081
+# ENTRYPOINT ["java","-jar","site.jar"]
