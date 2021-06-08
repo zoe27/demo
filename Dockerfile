@@ -4,6 +4,7 @@ RUN ls /var/lib/
 RUN who am i
 RUN pwd
 RUN ls /var/lib/
+RUN ls /drone/src/target
 
 RUN sleep 5000
 
