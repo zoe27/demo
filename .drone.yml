@@ -30,6 +30,9 @@ steps:
 
   - name: deploy
     image: plugins/docker
+    commands:
+      - pwd
+      - ls
     settings:
       dockerfile: Dockerfile
 
