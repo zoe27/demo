@@ -2,7 +2,7 @@ FROM java:8
 MAINTAINER zoe
 
 RUN pwd
-RUN ls /var/lib/docker/tmp
+RUN ls /var/lib/
 
 ADD salary-service.jar salary-service.jar
 EXPOSE 8081
