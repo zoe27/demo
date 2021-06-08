@@ -31,6 +31,9 @@ steps:
 
   - name: deploy
     image: plugins/docker
+    volumes:
+      - name: targetJar
+        path: /var/lib/docker/tmp/docker-builder162359091/
     settings:
       dockerfile: Dockerfile
 #    commands:
