@@ -26,10 +26,14 @@ steps:
       - pwd
       - ls
       - cd target
+#      - cp *.jar
       - rm -rf !\(*.jar\)
 
   - name: deploy
     image: plugins/docker
+    volumes:
+      - name: targetJar
+        path: /drone/src # the container directory
     commands:
       - pwd
       - ls
