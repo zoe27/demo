@@ -2,8 +2,9 @@ FROM maven:3-jdk-10 AS MAVEN_BUILD
 MAINTAINER zoe
 
 COPY pom.xml /build/
-COPY src /build/src && ls src
+COPY src /build/src
 WORKDIR /build/
+RUN ls /build/
 RUN mvn package
 FROM java:8
 COPY --from=MAVEN_BUILD /build/target/*.jar /app/salary-service.jar
