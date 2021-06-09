@@ -35,7 +35,7 @@ steps:
       - name: targetJar
         path: /var/lib
     settings:
-      dockerfile: Dockerfile
+      dockerfile: dockerfilev1
 
 
 
