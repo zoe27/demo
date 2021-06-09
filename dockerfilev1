@@ -1,4 +1,4 @@
-FROM maven:3-jdk-10 AS MAVEN_BUILD
+FROM maven:3-jdk-8 AS MAVEN_BUILD
 MAINTAINER zoe
 
 COPY pom.xml /build/
