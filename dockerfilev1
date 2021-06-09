@@ -2,9 +2,9 @@ FROM maven:3-jdk-10 AS MAVEN_BUILD
 MAINTAINER zoe
 
 COPY pom.xml /build/
-CAT pom.xml
+RUN cat pom.xml
 COPY src /build/src
-LS src
+RUN ls src
 WORKDIR /build/
 RUN mvn package
 FROM java:8
