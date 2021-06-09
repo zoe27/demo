@@ -38,6 +38,7 @@ steps:
 #      dockerfile: dockerfilev1
     commands:
       - ls /var/lib
+      - java
 
 
 
