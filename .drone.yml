@@ -36,6 +36,7 @@ steps:
         path: /var/lib
     settings:
       dockerfile: dockerfilev1
+      tags: latest
 
 
 
