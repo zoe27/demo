@@ -9,5 +9,5 @@ RUN mvn package
 FROM java:8
 COPY --from=MAVEN_BUILD /build/target/*.jar /app/salary-service.jar
 
-EXPOSE 8081  ## 打开8090端口监听容器
-ENTRYPOINT ["java","-jar","salary-service.jar"]  ##告
+EXPOSE 8081
+ENTRYPOINT ["java","-jar","salary-service.jar"]
