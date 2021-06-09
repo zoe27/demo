@@ -34,11 +34,9 @@ steps:
     volumes:
       - name: targetJar
         path: /var/lib
-#    settings:
-#      dockerfile: dockerfilev1
-    commands:
-      - ls /var/lib
-      - java
+    settings:
+      dockerfile: dockerfilev1
+
 
 
 
