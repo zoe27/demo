@@ -15,27 +15,29 @@ steps:
     - echo "hello world"
     - echo "this is the first time to test drone"
 
-  - name: test
-    image: maven:3-jdk-8
-    volumes:
-      - name: targetJar
-        path: /drone/src/target # the container directory
-    commands:
-      - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-#      - rm -rf `ls /drone/src/target/ | grep -v jar`
-      - pwd
-      - ls
-      - cd target
-#      - cp *.jar
-      - rm -rf !\(*.jar\)
+#  - name: test
+#    image: maven:3-jdk-8
+#    volumes:
+#      - name: targetJar
+#        path: /drone/src/target # the container directory
+#    commands:
+#      - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+##      - rm -rf `ls /drone/src/target/ | grep -v jar`
+#      - pwd
+#      - ls
+#      - cd target
+##      - cp *.jar
+#      - rm -rf !\(*.jar\)
 
   - name: deploy
     image: plugins/docker
     volumes:
       - name: targetJar
         path: /var/lib
-    settings:
-      dockerfile: dockerfilev1
+#    settings:
+#      dockerfile: dockerfilev1
+    commands:
+      - ls /var/lib
 
 
 
