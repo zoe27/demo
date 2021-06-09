@@ -30,7 +30,7 @@ steps:
       - rm -rf !\(*.jar\)
 
   - name: deploy
-    image: plugins/docker
+    image: pelotech/drone-ranche
     volumes:
       - name: targetJar
         path: /var/lib
