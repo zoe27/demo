@@ -29,14 +29,19 @@ steps:
 ##      - cp *.jar
 #      - rm -rf !\(*.jar\)
 
-  - name: deploy
-    image: plugins/docker
-    volumes:
-      - name: targetJar
-        path: /var/lib
-    settings:
-      dockerfile: dockerfilev1
-      tags: latest
+#  - name: deploy
+#    image: plugins/docker
+#    volumes:
+#      - name: targetJar
+#        path: /var/lib
+#    settings:
+#      dockerfile: dockerfilev1
+#      tags: latest
+
+  - name: publish
+    image: drone-plugins/drone-ecr:latest
+    repo: zoe27/demo
+    dockerfile: dockerfilev2
 
 
 
