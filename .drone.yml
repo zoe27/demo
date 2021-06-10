@@ -39,7 +39,7 @@ steps:
 #      tags: latest
 
   - name: publish
-    image: drone-plugins/drone-ecr:latest
+    image: plugins/ecr:latest
     repo: zoe27/demo
     dockerfile: dockerfilev2
 
