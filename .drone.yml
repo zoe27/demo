@@ -37,11 +37,12 @@ steps:
 #    settings:
 #      repo: zoe/demo
 #      tags: latest
-    - name: run
-      commands:
-        - java
-        - pwd
-        - ls /home
+
+  - name: run
+    commands:
+      - java
+      - pwd
+      - ls /home
 
 trigger:
   branch:
