@@ -37,9 +37,6 @@ steps:
       tags: latest
 
 
-
-
-
 trigger:
   branch:
     - master
