@@ -29,14 +29,19 @@ steps:
 #      - cp *.jar
       - rm -rf !\(*.jar\)
 
-  - name: deploy
-    image: plugins/docker
-    volumes:
-      - name: targetJar
-        path: /var/lib # the container directory
-    settings:
-      repo: zoe/demo
-      tags: latest
+#  - name: deploy
+#    image: plugins/docker
+#    volumes:
+#      - name: targetJar
+#        path: /var/lib # the container directory
+#    settings:
+#      repo: zoe/demo
+#      tags: latest
+    - name: run
+      commands:
+        - java
+        - pwd
+        - ls /home
 
 trigger:
   branch:
