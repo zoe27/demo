@@ -8,8 +8,6 @@ RUN ls -R /build/
 RUN mvn package
 FROM java:8
 COPY --from=MAVEN_BUILD /build/target/*.jar /app/salary-service.jar
-
+CMD java
 EXPOSE 8081
 ENTRYPOINT ["java","-jar","salary-service.jar"]
-
-RUN sleep 5000
