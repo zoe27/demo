@@ -5,7 +5,7 @@ MAINTAINER zoe
 # RUN pwd
 # RUN ls /var/lib/
 
-ADD /var/lib/salary-service.jar salary-service.jar
+COPY /var/lib/salary-service.jar salary-service.jar
 EXPOSE 8081
 
 
