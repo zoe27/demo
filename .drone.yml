@@ -32,7 +32,8 @@ steps:
   - name: deploy
     image: plugins/docker
     settings:
-      dockerfile: dockerfilev1
+      repo: zoe/demo
+#      dockerfile: dockerfilev1
       tags: latest
 
 
