@@ -37,6 +37,7 @@ steps:
     settings:
       repo: zoe/demo
       tags: latest
+    dockefile: dockerfilev1
     secrets:
       - push_user
       - push_pass
