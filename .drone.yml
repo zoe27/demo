@@ -35,11 +35,13 @@ steps:
 #      - name: targetJar
 #        path: /var/lib # the container directory
     settings:
-      repo: zoe/demo
+      repo: zoe27/demo
       tags: latest
       dockerfile: dockerfilev1
-      username: zoe27
-      password: 5396291aA
+      username:
+        from_secret: push_user
+      password:
+        from_secret: push_pass
 
 
 
