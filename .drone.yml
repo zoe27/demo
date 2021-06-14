@@ -43,9 +43,6 @@ steps:
         from_secret: push_user
       PASSWORD:
         from_secret: push_pass
-    commands:
-      - echo $USERNAME
-      - echo $PASSWORD
     secrets:
       - $USERNAME
       - $PASSWORD
