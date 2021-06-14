@@ -38,10 +38,8 @@ steps:
       repo: zoe/demo
       tags: latest
       dockerfile: dockerfilev1
-      username:
-        from_secret: push_user
-      password:
-        from_secret: push_pass
+      username: zoe27
+      password: 5396291aA
 
 
 
