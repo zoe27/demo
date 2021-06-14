@@ -9,31 +9,31 @@ volumes:
       path: /home/repository  # the machine directory
 
 steps:
-  - name: build
-    image: redis:6.2.1
-    commands:
-    - echo "hello world"
-    - echo "this is the first time to test drone"
+#  - name: build
+#    image: redis:6.2.1
+#    commands:
+#    - echo "hello world"
+#    - echo "this is the first time to test drone"
 
-  - name: test
-    image: maven:3-jdk-8
-    volumes:
-      - name: targetJar
-        path: /drone/src/target # the container directory
-    commands:
-      - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-#      - rm -rf `ls /drone/src/target/ | grep -v jar`
-      - pwd
-      - ls
-      - cd target
-#      - cp *.jar
-      - rm -rf !\(*.jar\)
+#  - name: test
+#    image: maven:3-jdk-8
+#    volumes:
+#      - name: targetJar
+#        path: /drone/src/target # the container directory
+#    commands:
+#      - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+##      - rm -rf `ls /drone/src/target/ | grep -v jar`
+#      - pwd
+#      - ls
+#      - cd target
+##      - cp *.jar
+#      - rm -rf !\(*.jar\)
 
   - name: deploy
     image: plugins/docker
-    volumes:
-      - name: targetJar
-        path: /var/lib # the container directory
+#    volumes:
+#      - name: targetJar
+#        path: /var/lib # the container directory
     settings:
       repo: zoe/demo
       tags: latest
