@@ -38,14 +38,18 @@ steps:
       repo: zoe/demo
       tags: latest
       dockerfile: dockerfilev1
-    secrets:
-      - $USERNAME
-      - $PASSWORD
     environment:
       USERNAME:
         from_secret: push_user
       PASSWORD:
         from_secret: push_pass
+    command:
+      - echo $USERNAME
+      - echo $PASSWORD
+    secrets:
+      - $USERNAME
+      - $PASSWORD
+
 
 trigger:
   branch:
