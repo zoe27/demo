@@ -39,8 +39,13 @@ steps:
       tags: latest
       dockerfile: dockerfilev1
     secrets:
-      - push_user
-      - push_pass
+      - $USERNAME
+      - $PASSWORD
+    environment:
+      USERNAME:
+        from_secret: push_user
+      PASSWORD:
+        from_secret: push_pass
 
 trigger:
   branch:
