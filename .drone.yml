@@ -29,24 +29,23 @@ steps:
 ##      - cp *.jar
 #      - rm -rf !\(*.jar\)
 
-  - name: publish
-    image: plugins/docker
-#    volumes:
-#      - name: targetJar
-#        path: /var/lib # the container directory
-    settings:
-      repo: zoe27/demo
-      tags: latest
-      dockerfile: dockerfilev1
-      username:
-        from_secret: push_user
-      password:
-        from_secret: push_pass
+#  - name: publish
+#    image: plugins/docker
+##    volumes:
+##      - name: targetJar
+##        path: /var/lib # the container directory
+#    settings:
+#      repo: zoe27/demo
+#      tags: latest
+#      dockerfile: dockerfilev1
+#      username:
+#        from_secret: push_user
+#      password:
+#        from_secret: push_pass
 
   - name: deploy
     image: appleboy/drone-ssh
-    host:
-      from_secret: host
+    host: 204.44.87.9
     username:
       from_secret: user
     password:
