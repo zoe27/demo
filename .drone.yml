@@ -57,8 +57,8 @@ steps:
       script:
         - cd /home/repository
         - docker pull zoe27/demo:latest
-        - docker rm -f docker-demo || true # 这里这样是因为如果不存在docker-demo，rm会报错
-        - docker run -d -p 8065:8089 --name docker-demo zoe27/demo
+        - docker rm -f salary-service || true # 这里这样是因为如果不存在docker-demo，rm会报错
+        - docker run -d -p 80:8089 --name salary-service zoe27/demo
 
 
 
