@@ -8,5 +8,5 @@ RUN ls -R /build/
 RUN mvn package
 FROM java:8
 COPY --from=MAVEN_BUILD /build/target/*.jar ./salary-service.jar
-EXPOSE 8081
+EXPOSE 8089
 ENTRYPOINT ["java","-jar","salary-service.jar"]
