@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="yiwang.salary.yiwang.salary.tools.mapper.SalaryMapper" >
-  <resultMap id="BaseResultMap" type="yiwang.salary.yiwang.salary.tools.vo.Salary" >
+<mapper namespace="yiwang.salary.tools.mapper.SalaryMapper" >
+  <resultMap id="BaseResultMap" type="yiwang.salary.tools.vo.Salary" >
     <result column="id" property="id" jdbcType="INTEGER" />
     <result column="company" property="company" jdbcType="VARCHAR" />
     <result column="title" property="title" jdbcType="VARCHAR" />
@@ -22,7 +22,7 @@
     <result column="md5" property="md5" jdbcType="VARCHAR" />
     <result column="core_info" property="coreInfo" jdbcType="LONGVARCHAR" />
   </resultMap>
-  <insert id="insert" parameterType="yiwang.salary.yiwang.salary.tools.vo.Salary" >
+  <insert id="insert" parameterType="yiwang.salary.tools.vo.Salary" >
     insert into salary (id, company, title, 
       level, year_of_exp, year_in_come, 
       bouns_comp, base_comp, total_comp, 
