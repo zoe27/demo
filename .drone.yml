@@ -58,7 +58,7 @@ steps:
         - cd /home/repository
         - docker pull zoe27/demo:latest
         - docker rm -f salary-service || true # 这里这样是因为如果不存在docker-demo，rm会报错
-        - docker run -d -p 80:8089 --name salary-service zoe27/demo
+        - docker run -d -p 80:8089 --ip 172.18.0.10  --name salary-service zoe27/demo
 
 
 
