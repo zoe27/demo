@@ -15,7 +15,7 @@ service:
       MYSQL_DATABASE: mydb
       MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
 
-#steps:
+steps:
 #  - name: publish
 #    image: plugins/docker
 ##    volumes:
@@ -48,6 +48,12 @@ service:
 #        - docker pull zoe27/demo:latest
 #        - docker rm -f salary-service || true # 这里这样是因为如果不存在docker-demo，rm会报错
 #        - docker run -d -p 80:8089 --network bridge --link my_mysql:db --name salary-service zoe27/demo
+
+  - name: test
+    image: mysql
+    commands:
+      - sleep 15
+      - mysql -u root -h database --execute="SELECT VERSION();"
 
 
 
