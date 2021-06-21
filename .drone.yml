@@ -8,57 +8,46 @@ volumes:
     host:
       path: /home/repository  # the machine directory
 
-steps:
-#  - name: build
-#    image: redis:6.2.1
-#    commands:
-#    - echo "hello world"
-#    - echo "this is the first time to test drone"
+service:
+  - name: database
+    image: mysql
+    environment:
+      MYSQL_DATABASE: mydb
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
 
-#  - name: test
-#    image: maven:3-jdk-8
-#    volumes:
-#      - name: targetJar
-#        path: /drone/src/target # the container directory
-#    commands:
-#      - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-##      - rm -rf `ls /drone/src/target/ | grep -v jar`
-#      - pwd
-#      - ls
-#      - cd target
-##      - cp *.jar
-#      - rm -rf !\(*.jar\)
-
-  - name: publish
-    image: plugins/docker
-#    volumes:
-#      - name: targetJar
-#        path: /var/lib # the container directory
-    settings:
-      repo: zoe27/demo
-      tags: latest
-      dockerfile: dockerfilev1
-      username:
-        from_secret: push_user
-      password:
-        from_secret: push_pass
-
-  - name: deploy
-    image: appleboy/drone-ssh
-    settings:
-      host:
-        from_secret: host
-      username:
-        from_secret: user
-      password:
-        from_secret: pass
-      port: 22
-#      command_timeout: "300" # ssh命令行执行超时时间，300秒
-      script:
-        - cd /home/repository
-        - docker pull zoe27/demo:latest
-        - docker rm -f salary-service || true # 这里这样是因为如果不存在docker-demo，rm会报错
-        - docker run -d -p 80:8089 --network bridge --link my_mysql:db --name salary-service zoe27/demo
+#steps:
+#  - name: publish
+#    image: plugins/docker
+##    volumes:
+##      - name: targetJar
+##        path: /var/lib # the container directory
+#    settings:
+#      repo: zoe27/demo
+#      tags: latest
+#      dockerfile: dockerfilev1
+#      username:
+#        from_secret: push_user
+#      password:
+#        from_secret: push_pass
+#
+#
+#
+#  - name: deploy
+#    image: appleboy/drone-ssh
+#    settings:
+#      host:
+#        from_secret: host
+#      username:
+#        from_secret: user
+#      password:
+#        from_secret: pass
+#      port: 22
+##      command_timeout: "300" # ssh命令行执行超时时间，300秒
+#      script:
+#        - cd /home/repository
+#        - docker pull zoe27/demo:latest
+#        - docker rm -f salary-service || true # 这里这样是因为如果不存在docker-demo，rm会报错
+#        - docker run -d -p 80:8089 --network bridge --link my_mysql:db --name salary-service zoe27/demo
 
 
 
