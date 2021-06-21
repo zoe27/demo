@@ -13,7 +13,7 @@ volumes:
   - name: my.cnf
     host:
       path: /home/server/conf/my.cnf
-  -name: datadir
+  - name: datadir
     host:
       path: /home/server/datadir
   - name: dockerDir
