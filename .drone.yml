@@ -10,7 +10,7 @@ volumes:
 
 service:
   - name: database
-    image: mysql:5.7.16
+    image: mysql
     container_name: my_mysql_1
     volumes:
       - ./mydir:/mydir
