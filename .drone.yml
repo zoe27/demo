@@ -51,18 +51,19 @@ steps:
       port: 22
       #      command_timeout: "300" # ssh命令行执行超时时间，300秒
       script:
-        docker run -d -p 4306:3306
-        --restart always
-        --privileged=true
-        --name mysql
-        -e MYSQL_USER="root"
-        -e MYSQL_PASSWORD="123456"
-        -e MYSQL_ROOT_PASSWORD="123456"
-        -v=./mydir:/mydir
-        -v=./datadir:/var/lib/mysql
-        -v=./conf/my.cnf:/etc/my.cnf
-        -v=~/root/docker:/docker-entrypoint-initdb.d
-        mysql/mysql-server
+        - cd /home/server
+        - docker run -d -p 4306:3306
+          --restart always
+          --privileged=true
+          --name mysql
+          -e MYSQL_USER="root"
+          -e MYSQL_PASSWORD="123456"
+          -e MYSQL_ROOT_PASSWORD="123456"
+          -v=mydir:/mydir
+          -v=datadir:/var/lib/mysql
+          -v=conf/my.cnf:/etc/my.cnf
+          -v=~/root/docker:/docker-entrypoint-initdb.d
+          mysql/mysql-server
 
 #  - name: deploy
 #    image: appleboy/drone-ssh
