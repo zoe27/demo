@@ -13,7 +13,7 @@ service:
     image: mysql
     environment:
       MYSQL_DATABASE: mydb
-      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
 
 steps:
 #  - name: publish
