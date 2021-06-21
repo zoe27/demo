@@ -7,6 +7,12 @@ volumes:
   - name: targetJar
     host:
       path: /home/repository  # the machine directory
+  - name: mysqlDir
+    host:
+      path: /home/server
+  - name: dockerDir
+    host:
+      path: /root
 
 service:
   - name: database
@@ -59,10 +65,10 @@ steps:
           -e MYSQL_USER="root"
           -e MYSQL_PASSWORD="123456"
           -e MYSQL_ROOT_PASSWORD="123456"
-          -v=/home/server/mydir:/mydir
-          -v=/home/server/datadir:/var/lib/mysql
-          -v=/home/server/conf/my.cnf:/etc/my.cnf
-          -v=/root/docker:/docker-entrypoint-initdb.d
+          -v=mysqlDir/mydir:/mydir
+          -v=mysqlDir/datadir:/var/lib/mysql
+          -v=mysqlDir/conf/my.cnf:/etc/my.cnf
+          -v=dockerDir/docker:/docker-entrypoint-initdb.d
           mysql/mysql-server
 
 #  - name: deploy
