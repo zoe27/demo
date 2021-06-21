@@ -61,7 +61,7 @@ steps:
         - docker run -d -p 4306:3306
           --restart always
           --privileged=true
-          --name mysql
+          --name mysql_1
           -e MYSQL_USER="root"
           -e MYSQL_PASSWORD="123456"
           -e MYSQL_ROOT_PASSWORD="123456"
