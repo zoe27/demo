@@ -66,6 +66,7 @@ steps:
         - cd /home/server
         - pwd
         - sleep 50
+        - docker rm -f mysql_1
         - docker run -d -p 4306:3306
           --restart always
           --privileged=true
@@ -73,10 +74,10 @@ steps:
           -e MYSQL_USER="root"
           -e MYSQL_PASSWORD="123456"
           -e MYSQL_ROOT_PASSWORD="123456"
-          -v=/home/server/mydir:/mydir
-          -v=/home/server/datadir:/var/lib/mysql
-          -v=/home/server/conf/my.cnf:/etc/my.cnf
-          -v=/root/docker:/docker-entrypoint-initdb.d
+#          -v=/home/server/mydir:/mydir
+#          -v=/home/server/datadir:/var/lib/mysql
+#          -v=/home/server/conf/my.cnf:/etc/my.cnf
+#          -v=/root/docker:/docker-entrypoint-initdb.d
           mysql/mysql-server
 
 #  - name: deploy
