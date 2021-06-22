@@ -64,6 +64,8 @@ steps:
       #      command_timeout: "300" # ssh命令行执行超时时间，300秒
       script:
         - cd /home/server
+        - pwd
+        - sleep 50
         - docker run -d -p 4306:3306
           --restart always
           --privileged=true
