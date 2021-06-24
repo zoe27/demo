@@ -37,19 +37,19 @@ service:
       - 3308:3306
 
 steps:
-#  - name: publish
-#    image: plugins/docker
-##    volumes:
-##      - name: targetJar
-##        path: /var/lib # the container directory
-#    settings:
-#      repo: zoe27/demo
-#      tags: latest
-#      dockerfile: dockerfilev1
-#      username:
-#        from_secret: push_user
-#      password:
-#        from_secret: push_pass
+  - name: publish
+    image: plugins/docker
+#    volumes:
+#      - name: targetJar
+#        path: /var/lib # the container directory
+    settings:
+      repo: zoe27/demo
+      tags: latest
+      dockerfile: dockerfilev1
+      username:
+        from_secret: push_user
+      password:
+        from_secret: push_pass
 
   - name: mysql
     image: appleboy/drone-ssh
