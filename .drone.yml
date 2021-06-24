@@ -76,7 +76,7 @@ steps:
           -e MYSQL_ROOT_PASSWORD="123456"
           -v /home/server/mydir:/mydir
           -v /home/server/datadir:/var/lib/mysql
-          -v /home/server/conf/my.cnf:/etc/my.cnf
+          -v /home/server/conf/my.cnf:/etc/mysql/my.cnf
           -v /root/docker:/docker-entrypoint-initdb.d
           mysql:5.7.16
 
