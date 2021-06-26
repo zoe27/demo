@@ -36,6 +36,9 @@ service:
     ports:
       - 3308:3306
 
+  - name: es
+    image: elasticsearch:5-alpine
+
 steps:
   - name: publish
     image: plugins/docker
@@ -76,7 +79,7 @@ steps:
           --name mysql_1
           -e MYSQL_USER=$db_user
           -e MYSQL_PASSWORD=$db_pass
-          -e MYSQL_ROOT_PASSWORD="123456"
+          -e MYSQL_ROOT_PASSWORD=$db_pass
           -v /home/mysql/mydir:/mydir
           -v /home/mysql/datadir:/var/lib/mysql
           -v /home/mysql/conf/my.cnf:/etc/mysql/my.cnf
