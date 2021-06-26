@@ -87,18 +87,18 @@ steps:
           mysql:5.7.16
 
   - name: elasticsearch
-      image: appleboy/drone-ssh
-      settings:
-        host:
-          from_secret: host
-        username:
-          from_secret: user
-        password:
-          from_secret: pass
-        port: 22
-        script:
-          - docker run -d --name es -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node"
-            elasticsearch:6.8.0
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        from_secret: host
+      username:
+        from_secret: user
+      password:
+        from_secret: pass
+      port: 22
+      script:
+        - docker run -d --name es -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node"
+          elasticsearch:6.8.0
 
   - name: deploy
     image: appleboy/drone-ssh
