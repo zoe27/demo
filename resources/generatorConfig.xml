@@ -44,17 +44,17 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		
-		<table schema="" tableName="admin_user" domainObjectName="AdminUser">
+		<!-- <table schema="" tableName="admin_user" domainObjectName="AdminUser">
 		<columnOverride column="pname" javaType="java.lang.String" jdbcType="VARCHAR"/>
 		</table>
 		<table schema="" tableName="classification" domainObjectName="Classification"/>
 		<table schema="" tableName="comment" domainObjectName="Comment"/>
 		<table schema="" tableName="goods_info" domainObjectName="GoodsInfo"/>
-		<table schema="" tableName="history_records" domainObjectName="HistoryRecords"/>
+		<table schema="" tableName="history_records" domainObjectName="HistoryRecords"/> -->
 		<table schema="" tableName="order" domainObjectName="Order"/>
-		<table schema="" tableName="order_item" domainObjectName="OrderItem"/>
+		<!-- <table schema="" tableName="order_item" domainObjectName="OrderItem"/>
 		<table schema="" tableName="product" domainObjectName="Product"/>
-		<table schema="" tableName="user" domainObjectName="User"/>
+		<table schema="" tableName="user" domainObjectName="User"/> -->
 
 	</context>
 </generatorConfiguration>
